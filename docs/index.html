@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0f6e56">
+  <meta name="description" content="Mappa delle farmacie di Roma suddivise nei 19 ex municipi (1977-2013).">
+  <title>Farmacie di Roma per ex municipio</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f6e56'/%3E%3Cpath d='M13 6h6v7h7v6h-7v7h-6v-7H6v-6h7z' fill='%23fff'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="vendor/leaflet/leaflet.css">
+  <link rel="stylesheet" href="vendor/markercluster/MarkerCluster.css">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+  <div id="map" aria-label="Mappa delle farmacie di Roma"></div>
+
+  <aside id="pannello" class="pannello stato-medio" aria-label="Pannello farmacie">
+    <button id="maniglia" class="maniglia" type="button" aria-label="Espandi o riduci il pannello"><span></span></button>
+
+    <header class="testata">
+      <div class="titolo-riga">
+        <h1>Farmacie di Roma <span>per ex municipio</span></h1>
+        <button id="btn-info" class="btn-icona" type="button" aria-label="Informazioni sui dati">i</button>
+      </div>
+      <div class="controlli">
+        <label class="campo-ricerca">
+          <span class="vh">Cerca farmacia</span>
+          <input id="ricerca" type="search" placeholder="Cerca per nome o indirizzo" autocomplete="off" enterkeyhint="search">
+        </label>
+        <label class="campo-filtro">
+          <span class="vh">Filtra per ex municipio</span>
+          <select id="filtro-municipio"></select>
+        </label>
+      </div>
+    </header>
+
+    <div id="contenuto" class="contenuto">
+      <p class="caricamento">Caricamento dati…</p>
+    </div>
+  </aside>
+
+  <button id="btn-posizione" class="btn-mappa" type="button" aria-label="Mostra la mia posizione" title="La mia posizione">
+    <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><circle cx="12" cy="12" r="4" fill="currentColor"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="12" r="7.5" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+  </button>
+
+  <dialog id="info" class="info">
+    <form method="dialog">
+      <h2>Informazioni</h2>
+      <p>Farmacie aperte al pubblico nel Comune di Roma, suddivise nei <strong>19 ex municipi</strong> in vigore dal 1992 al 2013 (I–XIII e XV–XX; l'ex XIV è diventato il Comune di Fiumicino).</p>
+      <p>I confini degli ex municipi sono ottenuti unendo le 155 zone urbanistiche: il numero iniziale del codice zona indica l'ex municipio (es. 4A → IV, 13F → XIII).</p>
+      <h3>Legenda</h3>
+      <ul class="legenda">
+        <li><span class="pallino"></span> Posizione al numero civico</li>
+        <li><span class="pallino approssimata"></span> Posizione approssimata (centro della via o dato non verificato)</li>
+      </ul>
+      <h3>Fonti</h3>
+      <ul>
+        <li>Elenco farmacie: <a href="https://www.dati.salute.gov.it/it/dataset/farmacie/" target="_blank" rel="noopener">Ministero della Salute – Open Data</a> (IODL 2.0), file <span id="info-fonte"></span>. Solo farmacie attive (senza data di fine validità).</li>
+        <li>Zone urbanistiche: <a href="https://geoportale.comune.roma.it/" target="_blank" rel="noopener">Geoportale di Roma Capitale</a>, layer “Zone Urbanistiche”.</li>
+        <li>Posizioni corrette con <a href="https://nominatim.openstreetmap.org/" target="_blank" rel="noopener">Nominatim</a>. Dati © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap contributors</a> (ODbL).</li>
+        <li>Mappa di base © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap contributors</a>.</li>
+      </ul>
+      <p class="nota">Dati aggiornati al <span id="info-data"></span>. Le informazioni possono contenere errori: verificare sempre prima di una visita.</p>
+      <button class="btn-primario" value="chiudi">Chiudi</button>
+    </form>
+  </dialog>
+
+  <script src="vendor/leaflet/leaflet.js"></script>
+  <script src="vendor/markercluster/leaflet.markercluster.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
