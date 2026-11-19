@@ -187,8 +187,17 @@
   function aggiornaEtichette() {
     etichette.clearLayers();
     if (!vistaInsieme() || !dati.geoMunicipi) return;
-    dati.geoMunicipi.features.forEach(function (ft) {
+    // Evito le sovrapposizioni: piazzo prima i municipi con più farmacie e salto le etichette
+    // che coprirebbero quelle già piazzate (ricompaiono avvicinando la mappa).
+    var occupati = [], W = 34, H = 27;
+    dati.geoMunicipi.features.slice().sort(function (a, b) {
+      return b.properties.farmacie - a.properties.farmacie;
+    }).forEach(function (ft) {
       var p = ft.properties;
+      var pt = mappa.latLngToContainerPoint([p.lp[0], p.lp[1]]);
+      for (var i = 0; i < occupati.length; i++)
+        if (Math.abs(occupati[i].x - pt.x) < W && Math.abs(occupati[i].y - pt.y) < H) return;
+      occupati.push(pt);
       L.marker([p.lp[0], p.lp[1]], {
         interactive: false, keyboard: false,
         icon: L.divIcon({ className: "", iconSize: null,
@@ -385,7 +394,8 @@
   var eraInsieme = null;
   mappa.on("zoomend", function () {
     var ora = vistaInsieme();
-    if (ora !== eraInsieme) { eraInsieme = ora; aggiornaMarker(); aggiornaEtichette(); }
+    if (ora !== eraInsieme) { eraInsieme = ora; aggiornaMarker(); }
+    aggiornaEtichette();
   });
   window.addEventListener("resize", function () { impostaPannello(statoPannello()); });
   window.addEventListener("hashchange", function () { if (!aggiornandoHash) applicaHash(); });

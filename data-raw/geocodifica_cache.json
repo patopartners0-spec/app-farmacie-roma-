@@ -397,15 +397,21 @@
   "display_name": "Via di Priscilla, Quartiere Africano, Trieste, Municipio Roma II, Roma, Roma Capitale, Lazio, 00199, Italia",
   "indirizzo": "Via Priscilla, 77/79",
   "via_cercata": "Via Priscilla",
-  "civico_cercato": "77"
+  "civico_cercato": "77",
+  "versione": 2
  },
  "9114": {
-  "lat": null,
-  "lon": null,
-  "metodo": "non_trovato",
+  "lat": 41.9597549,
+  "lon": 12.5452374,
+  "metodo": "testo+civico",
+  "civico_trovato": true,
+  "via_trovata": "Via Giulio Antamoro",
+  "cap_trovato": "00139",
+  "display_name": "Farmacia Dott. Valentini, 86b, Via Giulio Antamoro, Casal Boccone, Municipio Roma III, Roma, Roma Capitale, Lazio, 00139, Italia",
   "indirizzo": "Via G.Antamoro, 86/b",
   "via_cercata": "Via G.Antamoro",
-  "civico_cercato": "86"
+  "civico_cercato": "86",
+  "versione": 2
  },
  "9115": {
   "lat": 41.9186801,
@@ -420,16 +426,21 @@
   "civico_cercato": "31"
  },
  "9116": {
-  "lat": null,
-  "lon": null,
-  "metodo": "non_trovato",
+  "lat": 41.9176779,
+  "lon": 12.4965883,
+  "metodo": "testo+civico",
+  "civico_trovato": false,
+  "via_trovata": "Via Giovanni Pacini",
+  "cap_trovato": "00198",
+  "display_name": "Via Giovanni Pacini, Pinciano, Municipio Roma II, Roma, Roma Capitale, Lazio, 00198, Italia",
   "indirizzo": "Via G. Pacini, 15",
   "via_cercata": "Via G. Pacini",
-  "civico_cercato": "15"
+  "civico_cercato": "15",
+  "versione": 2
  },
  "9117": {
-  "lat": 41.9497765,
-  "lon": 12.3712307,
+  "lat": 41.9496413,
+  "lon": 12.3738397,
   "metodo": "civico+cap",
   "civico_trovato": false,
   "via_trovata": "Via Gaverina",
@@ -437,15 +448,21 @@
   "display_name": "Via Gaverina, Selva Candida, Municipio Roma XIV, Roma, Roma Capitale, Lazio, 00166, Italia",
   "indirizzo": "Via Gaverina, 10",
   "via_cercata": "Via Gaverina",
-  "civico_cercato": "10"
+  "civico_cercato": "10",
+  "versione": 2
  },
  "9118": {
-  "lat": null,
-  "lon": null,
-  "metodo": "non_trovato",
+  "lat": 41.9235086,
+  "lon": 12.4699386,
+  "metodo": "testo+civico",
+  "civico_trovato": false,
+  "via_trovata": "Via Cesare Fracassini",
+  "cap_trovato": "00196",
+  "display_name": "Via Cesare Fracassini, Flaminio, Municipio Roma II, Roma, Roma Capitale, Lazio, 00196, Italia",
   "indirizzo": "Via C. Fracassini, 26",
   "via_cercata": "Via C. Fracassini",
-  "civico_cercato": "26"
+  "civico_cercato": "26",
+  "versione": 2
  },
  "9119": {
   "lat": 41.9463653,
@@ -505,7 +522,8 @@
   "display_name": "Via Cimone, Monte Sacro, Municipio Roma III, Roma, Roma Capitale, Lazio, 00141, Italia",
   "indirizzo": "Via Cimone, 119/a",
   "via_cercata": "Via Cimone",
-  "civico_cercato": "119"
+  "civico_cercato": "119",
+  "versione": 2
  },
  "9124": {
   "lat": 41.9344727,
@@ -561,7 +579,8 @@
   "metodo": "non_trovato",
   "indirizzo": "Via Di Valle Melania, 151",
   "via_cercata": "Via Di Valle Melania",
-  "civico_cercato": "151"
+  "civico_cercato": "151",
+  "versione": 2
  },
  "9129": {
   "lat": 41.9242177,
@@ -585,15 +604,21 @@
   "display_name": "Via dei Sabelli, San Lorenzo, Municipio Roma II, Roma, Roma Capitale, Lazio, 00185, Italia",
   "indirizzo": "Via dei Sabelli, 84",
   "via_cercata": "Via dei Sabelli",
-  "civico_cercato": "84"
+  "civico_cercato": "84",
+  "versione": 2
  },
  "9131": {
-  "lat": null,
-  "lon": null,
-  "metodo": "non_trovato",
+  "lat": 41.9519667,
+  "lon": 12.51684,
+  "metodo": "testo+civico",
+  "civico_trovato": false,
+  "via_trovata": "Via Filippo Antonio Gualterio",
+  "cap_trovato": "00139",
+  "display_name": "Via Filippo Antonio Gualterio, Val Melaina, Municipio Roma III, Roma, Roma Capitale, Lazio, 00139, Italia",
   "indirizzo": "Via F. A. Gualterio, 50/c",
   "via_cercata": "Via F. A. Gualterio",
-  "civico_cercato": "50"
+  "civico_cercato": "50",
+  "versione": 2
  },
  "9132": {
   "lat": 41.8938579,
@@ -608,24 +633,30 @@
   "civico_cercato": "5"
  },
  "9133": {
-  "lat": 41.9347967,
-  "lon": 12.51141,
+  "lat": 41.9339957,
+  "lon": 12.5120227,
   "metodo": "civico+cap",
   "civico_trovato": false,
   "via_trovata": "Via Magliano Sabina",
   "cap_trovato": "00199",
-  "display_name": "Via Magliano Sabina, Trieste, Municipio Roma II, Roma, Roma Capitale, Lazio, 00199, Italia",
+  "display_name": "Via Magliano Sabina, Quartiere Africano, Trieste, Municipio Roma II, Roma, Roma Capitale, Lazio, 00199, Italia",
   "indirizzo": "Via Magliano Sabina, 25",
   "via_cercata": "Via Magliano Sabina",
-  "civico_cercato": "25"
+  "civico_cercato": "25",
+  "versione": 2
  },
  "9134": {
-  "lat": null,
-  "lon": null,
-  "metodo": "non_trovato",
+  "lat": 41.9633184,
+  "lon": 12.513613,
+  "metodo": "testo+civico",
+  "civico_trovato": true,
+  "via_trovata": "Via Gaspare Pacchiarotti",
+  "cap_trovato": "00139",
+  "display_name": "34, Via Gaspare Pacchiarotti, Serpentara, Castel Giubileo, Municipio Roma III, Saxa Rubra, Roma, Roma Capitale, Lazio, 00139, Italia",
   "indirizzo": "Via G. Pacchiarotti, 34",
   "via_cercata": "Via G. Pacchiarotti",
-  "civico_cercato": "34"
+  "civico_cercato": "34",
+  "versione": 2
  },
  "9135": {
   "lat": 41.9181612,
@@ -661,7 +692,8 @@
   "display_name": "Via Nomentana, Trieste, Municipio Roma II, Roma, Roma Capitale, Lazio, 00162, Italia",
   "indirizzo": "Via Nomentana, 451",
   "via_cercata": "Via Nomentana",
-  "civico_cercato": "451"
+  "civico_cercato": "451",
+  "versione": 2
  },
  "9138": {
   "lat": 41.8964306,
@@ -673,7 +705,8 @@
   "display_name": "Via Vezio Crisafulli, Aurelio, Municipio Roma XIII, Roma, Roma Capitale, Lazio, 00163, Italia",
   "indirizzo": "Via Vezio Crisafulli, 2/8",
   "via_cercata": "Via Vezio Crisafulli",
-  "civico_cercato": "2"
+  "civico_cercato": "2",
+  "versione": 2
  },
  "9139": {
   "lat": 41.936696,
@@ -688,8 +721,8 @@
   "civico_cercato": "564"
  },
  "9140": {
-  "lat": 41.9254338,
-  "lon": 12.5082607,
+  "lat": 41.9263876,
+  "lon": 12.5062823,
   "metodo": "civico+cap",
   "civico_trovato": false,
   "via_trovata": "Via Anapo",
@@ -697,7 +730,8 @@
   "display_name": "Via Anapo, Trieste, Municipio Roma II, Roma, Roma Capitale, Lazio, 00199, Italia",
   "indirizzo": "Via Anapo, 38/40",
   "via_cercata": "Via Anapo",
-  "civico_cercato": "38"
+  "civico_cercato": "38",
+  "versione": 2
  },
  "9141": {
   "lat": 41.9286334,
@@ -709,7 +743,8 @@
   "display_name": "Via Fezzan, Quartiere Africano, Trieste, Municipio Roma II, Roma, Roma Capitale, Lazio, 00141, Italia",
   "indirizzo": "Via Fezzan, 16/18",
   "via_cercata": "Via Fezzan",
-  "civico_cercato": "16"
+  "civico_cercato": "16",
+  "versione": 2
  },
  "9142": {
   "lat": 41.8976048,
@@ -733,19 +768,21 @@
   "display_name": "Via della Lucchina, Ottavia, Municipio Roma XIV, Roma, Roma Capitale, Lazio, 00168, Italia",
   "indirizzo": "Via della Lucchina, 131 A/B",
   "via_cercata": "Via della Lucchina",
-  "civico_cercato": "131"
+  "civico_cercato": "131",
+  "versione": 2
  },
  "9144": {
-  "lat": 41.9965247,
-  "lon": 12.5168568,
+  "lat": 41.980681,
+  "lon": 12.5080256,
   "metodo": "civico+cap",
   "civico_trovato": false,
   "via_trovata": "Via Salaria",
   "cap_trovato": "00138",
-  "display_name": "Via Salaria, Belpoggio, Marcigliana, Municipio Roma III, Settebagni, Roma, Roma Capitale, Lazio, 00138, Italia",
+  "display_name": "Via Salaria, Colle Salario, Castel Giubileo, Municipio Roma III, Saxa Rubra, Roma, Roma Capitale, Lazio, 00138, Italia",
   "indirizzo": "Via Salaria, 1434",
   "via_cercata": "Via Salaria",
-  "civico_cercato": "1434"
+  "civico_cercato": "1434",
+  "versione": 2
  },
  "9145": {
   "lat": 41.8902812,
@@ -757,7 +794,8 @@
   "display_name": "Via Emanuele Filiberto, Esquilino, Municipio Roma I, Roma, Roma Capitale, Lazio, 00185, Italia",
   "indirizzo": "Via Emanuele Filiberto, 145",
   "via_cercata": "Via Emanuele Filiberto",
-  "civico_cercato": "145"
+  "civico_cercato": "145",
+  "versione": 2
  },
  "9146": {
   "lat": 41.9234697,
@@ -772,8 +810,8 @@
   "civico_cercato": "167"
  },
  "9148": {
-  "lat": 41.9387598,
-  "lon": 12.5273762,
+  "lat": 41.9388965,
+  "lon": 12.5272697,
   "metodo": "civico+cap",
   "civico_trovato": false,
   "via_trovata": "Piazza Conca d'Oro",
@@ -781,7 +819,8 @@
   "display_name": "Piazza Conca d'Oro, Monte Sacro, Municipio Roma III, Roma, Roma Capitale, Lazio, 00141, Italia",
   "indirizzo": "Piazza Conca D'Oro, 34/37",
   "via_cercata": "Piazza Conca D'Oro",
-  "civico_cercato": "34"
+  "civico_cercato": "34",
+  "versione": 2
  },
  "9149": {
   "lat": 41.9359184,
@@ -793,7 +832,8 @@
   "display_name": "Viale Somalia, Trieste, Municipio Roma II, Roma, Roma Capitale, Lazio, 00199, Italia",
   "indirizzo": "Viale Somalia, 235",
   "via_cercata": "Viale Somalia",
-  "civico_cercato": "235"
+  "civico_cercato": "235",
+  "versione": 2
  },
  "9150": {
   "lat": null,
