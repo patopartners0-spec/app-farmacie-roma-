@@ -114,6 +114,38 @@ def carica_zone():
     return zone, anomalie
 
 
+FAMIGLIE_TOPONIMI = {"via": "via", "viale": "via", "v": "via", "piazza": "piazza", "piazzale": "piazza",
+                     "largo": "piazza", "corso": "corso", "vicolo": "vicolo", "circonvallazione": "circ",
+                     "lungotevere": "lungotevere", "borgo": "borgo", "salita": "salita", "clivo": "clivo"}
+PAROLE_VUOTE = {"di", "de", "del", "della", "dei", "delle", "degli", "dello", "d", "e", "la", "le", "il",
+                "lo", "s", "san", "santa", "santo", "ss", "dott", "ang", "angolo"}
+
+
+def _parole(s):
+    import unicodedata
+    s = unicodedata.normalize("NFD", s or "").encode("ascii", "ignore").decode().lower()
+    return re.findall(r"[a-z0-9]+", s)
+
+
+def stessa_via(cercata: str, trovata: str) -> bool:
+    """La via trovata su OSM corrisponde a quella cercata? Evita abbinamenti del tipo
+    'Corso Vittorio Emanuele' -> 'Piazza Vittorio Emanuele II'."""
+    pc, pt = _parole(cercata), _parole(trovata)
+    # "Via Circonvallazione Cornelia": il primo "Via" e' un refuso
+    if len(pc) > 1 and pc[0] == "via" and FAMIGLIE_TOPONIMI.get(pc[1]):
+        pc = pc[1:]
+    if not pc or not pt:
+        return True
+    tc, tt = FAMIGLIE_TOPONIMI.get(pc[0]), FAMIGLIE_TOPONIMI.get(pt[0])
+    if tc and tt and tc != tt:
+        return False
+    sig_c = [w for w in pc[1 if tc else 0:] if w not in PAROLE_VUOTE and len(w) > 2]
+    if not sig_c:
+        return True
+    principale = max(sig_c, key=len)  # la parola piu' lunga (di solito il cognome o il nome proprio)
+    return principale in "".join(pt)  # senza spazi: 'torpignattara' ~ 'Tor Pignattara'
+
+
 def main():
     OUT.mkdir(parents=True, exist_ok=True)
     zone, anomalie_zone = carica_zone()
@@ -145,6 +177,14 @@ def main():
     with (RAW / "farmacie_roma_attive.csv").open(encoding="utf-8") as f:
         righe = list(csv.DictReader(f, delimiter=";"))
     geo = json.loads((RAW / "geocodifica_cache.json").read_text(encoding="utf-8"))
+    # Correzioni manuali (hanno la precedenza su tutto): cod_farmacia;lat;lon;nota
+    manuali = {}
+    fm = RAW / "correzioni_manuali.csv"
+    if fm.exists():
+        with fm.open(encoding="utf-8") as f:
+            for m in csv.DictReader(f, delimiter=";"):
+                if m.get("lat") and m.get("lon"):
+                    manuali[m["cod_farmacia"].strip()] = (float(m["lat"]), float(m["lon"]))
 
     def num(s):
         s = (s or "").strip()
@@ -162,7 +202,7 @@ def main():
         d = z["geom"].exterior.distance(pt) if isinstance(z["geom"], Polygon) else z["geom"].distance(pt)
         return z, d * 111000 * math.cos(math.radians(lat))
 
-    farmacie, dubbi, escluse = [], [], []
+    farmacie, dubbi, escluse, scartate_via = [], [], [], []
     stat = collections.Counter()
     for r in righe:
         mlat, mlon = num(r["latitudine"]), num(r["longitudine"])
@@ -178,10 +218,17 @@ def main():
         g = geo.get(r["cod_farmacia"], {})
         glat, glon = g.get("lat"), g.get("lon")
         g_ok = glat is not None and roma.buffer(0.003).contains(Point(glon, glat))
+        if g_ok and g.get("via_trovata") and not stessa_via(g.get("via_cercata", ""), g["via_trovata"]):
+            g_ok = False
+            stat["osm_scartata_via_diversa"] += 1
+            scartate_via.append((r, g["via_trovata"]))
         g_civico = g_ok and g.get("civico_trovato")
 
         nota = None
-        if g_civico and m_ok:
+        if r["cod_farmacia"] in manuali:
+            lat, lon = manuali[r["cod_farmacia"]]
+            fonte, precisione = "manuale", "civico"
+        elif g_civico and m_ok:
             d = metri(mlat, mlon, glat, glon)
             lat, lon, fonte, precisione = glat, glon, "osm", "civico"
             if d > DIST_ACCORDO_M:
@@ -205,6 +252,8 @@ def main():
             escluse.append((r, f"Coordinate Ministero {motivo_m}; indirizzo non trovato su OSM"))
             continue
         stat[(fonte, precisione)] += 1
+        if fonte == "osm" and not stessa_via(g.get("via_cercata", ""), g.get("via_trovata") or ""):
+            nota = (nota + "; " if nota else "") + "via OSM diversa"
 
         z, dz = zona_di(lat, lon)
         if dz > DIST_ZONA_VICINA_M:
@@ -223,7 +272,7 @@ def main():
         f = {
             "id": r["cod_farmacia"],
             "n": r["descrizione_farmacia"].strip(),
-            "i": r["indirizzo"].strip().rstrip(","),
+            "i": re.sub(r"^(\w+)\s+\1\b", r"\1", r["indirizzo"].strip().rstrip(","), flags=re.I),
             "c": r["cap"].strip(),
             "fr": fraz.title(),
             "t": r["descrizione_tipologia"] if r["descrizione_tipologia"] not in ("", "-") else "",
@@ -270,6 +319,7 @@ def main():
         "aggiornamento": date.today().isoformat(),
         "fonte": fonte["file"],
         "zone": {z["codice"]: z["nome"] for z in zone},
+        "escluse": len(escluse),
         "farmacie": farmacie,
     })
 
@@ -282,11 +332,18 @@ def main():
     etichette = {("osm", "civico"): "OpenStreetMap, numero civico",
                  ("ministero", "civico"): "Ministero, confermata da OSM (stessa via)",
                  ("ministero", "approssimata"): "Ministero, non confermata",
-                 ("osm", "approssimata"): "OpenStreetMap, solo via (approssimata)"}
-    report += [f"- {etichette[k]}: {v}" for k, v in sorted(stat.items(), key=lambda x: -x[1])]
+                 ("osm", "approssimata"): "OpenStreetMap, solo via (approssimata)",
+                 ("manuale", "civico"): "Correzione manuale (data-raw/correzioni_manuali.csv)"}
+    report += [f"- {etichette[k]}: {v}" for k, v in sorted(stat.items(), key=lambda x: -x[1])
+               if k in etichette]
+    report += ["", f"Risultati OSM scartati perché la via trovata non corrisponde a quella cercata: "
+               f"{len(scartate_via)}", ""]
+    report += [f"- {r['cod_farmacia']} {r['indirizzo']} → OSM: {v}" for r, v in scartate_via]
     report += ["", "| Ex municipio | Farmacie |", "|---|---|"]
     report += [f"| {ROMANI[k]} | {cont_mun.get(k, 0)} |" for k in sorted(ROMANI)]
-    report += ["", f"### Farmacie escluse ({len(escluse)})", ""]
+    report += ["", f"### Farmacie escluse ({len(escluse)})", "",
+               "Non compaiono nell'app. Per recuperarle aggiungere la posizione in "
+               "`data-raw/correzioni_manuali.csv` (cod_farmacia;lat;lon;nota) e rilanciare questo script.", ""]
     report += [f"- {r['cod_farmacia']} {r['descrizione_farmacia']} — {r['indirizzo']} {r['cap']}: {m}"
                for r, m in escluse]
     report += ["", f"### Casi da verificare ({len(dubbi)})", "",
@@ -298,6 +355,8 @@ def main():
     print(f"Farmacie sulla mappa: {len(farmacie)}  escluse: {len(escluse)}  da verificare: {len(dubbi)}")
     for k, v in stat.items():
         print(f"  {k}: {v}")
+    for r, v in scartate_via:
+        print(f"  scartata: {r['indirizzo']} -> {v}")
     for k in sorted(ROMANI):
         print(f"  {ROMANI[k]:>5}: {cont_mun.get(k, 0)}")
 

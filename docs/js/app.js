@@ -238,7 +238,11 @@
         '<span class="barra"><i style="width:' + (100 * m.farmacie / max).toFixed(1) + '%"></i></span></span>' +
         '<span class="voce-num">' + m.farmacie + "<small>farmacie</small></span></button></li>";
     });
-    return h + "</ul>";
+    h += "</ul>";
+    if (dati.escluse)
+      h += '<p class="altri">Altre ' + dati.escluse + " farmacie attive non sono in mappa perché manca " +
+        "una posizione affidabile (vedi informazioni).</p>";
+    return h;
   }
 
   function voceFarmacia(f) {
@@ -423,6 +427,9 @@
   Promise.all([json("data/farmacie.json"), json("data/ex_municipi.geojson")]).then(function (res) {
     var fa = res[0], gm = res[1];
     dati.zone = fa.zone;
+    dati.escluse = fa.escluse || 0;
+    document.getElementById("info-escluse").textContent = dati.escluse
+      ? " " + dati.escluse + " farmacie non sono mostrate perché il loro indirizzo non è stato trovato e le coordinate ministeriali non sono affidabili." : "";
     dati.geoMunicipi = gm;
     dati.perId = {};
     dati.farmacie = fa.farmacie.map(function (f) {
