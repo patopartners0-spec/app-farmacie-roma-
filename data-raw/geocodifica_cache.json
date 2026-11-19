@@ -836,12 +836,17 @@
   "versione": 2
  },
  "9150": {
-  "lat": null,
-  "lon": null,
-  "metodo": "non_trovato",
+  "lat": 41.9210328,
+  "lon": 12.5200831,
+  "metodo": "testo+civico",
+  "civico_trovato": false,
+  "via_trovata": "Via Rodolfo Lanciani",
+  "cap_trovato": "00162",
+  "display_name": "Via Rodolfo Lanciani, Nomentano, Municipio Roma II, Roma, Roma Capitale, Lazio, 00162, Italia",
   "indirizzo": "Via R. Lanciani, 55",
   "via_cercata": "Via R. Lanciani",
-  "civico_cercato": "55"
+  "civico_cercato": "55",
+  "versione": 2
  },
  "9151": {
   "lat": 41.9231742,
@@ -853,7 +858,8 @@
   "display_name": "Piazza Istria, Trieste, Municipio Roma II, Roma, Roma Capitale, Lazio, 00199, Italia",
   "indirizzo": "Piazza Istria, 8",
   "via_cercata": "Piazza Istria",
-  "civico_cercato": "8"
+  "civico_cercato": "8",
+  "versione": 2
  },
  "9152": {
   "lat": 41.8984015,
@@ -889,7 +895,8 @@
   "display_name": "Piazza Pasquale Paoli, Ponte, Municipio Roma I, Roma, Roma Capitale, Lazio, 00120, Italia",
   "indirizzo": "Piazza Pasquale Paoli, 6",
   "via_cercata": "Piazza Pasquale Paoli",
-  "civico_cercato": "6"
+  "civico_cercato": "6",
+  "versione": 2
  },
  "9156": {
   "lat": 41.9450567,
@@ -925,7 +932,8 @@
   "display_name": "Piazza Capranica, Colonna, Municipio Roma I, Roma, Roma Capitale, Lazio, 00186, Italia",
   "indirizzo": "Piazza Capranica, 96",
   "via_cercata": "Piazza Capranica",
-  "civico_cercato": "96"
+  "civico_cercato": "96",
+  "versione": 2
  },
  "9159": {
   "lat": 41.9499995,
@@ -937,7 +945,8 @@
   "display_name": "Via Monte Sirino, Monte Sacro, Municipio Roma III, Roma, Roma Capitale, Lazio, 00139, Italia",
   "indirizzo": "Via Monte Sirino, 10",
   "via_cercata": "Via Monte Sirino",
-  "civico_cercato": "10"
+  "civico_cercato": "10",
+  "versione": 2
  },
  "9160": {
   "lat": 41.8929969,
@@ -952,8 +961,8 @@
   "civico_cercato": "73"
  },
  "9161": {
-  "lat": 41.9172391,
-  "lon": 12.5012001,
+  "lat": 41.9187453,
+  "lon": 12.4994045,
   "metodo": "civico+cap",
   "civico_trovato": false,
   "via_trovata": "Viale Regina Margherita",
@@ -961,7 +970,8 @@
   "display_name": "Viale Regina Margherita, Salario, Municipio Roma II, Roma, Roma Capitale, Lazio, 00198, Italia",
   "indirizzo": "Viale Regina Margherita, 61/63",
   "via_cercata": "Viale Regina Margherita",
-  "civico_cercato": "61"
+  "civico_cercato": "61",
+  "versione": 2
  },
  "9162": {
   "lat": 41.9325176,
@@ -985,7 +995,8 @@
   "display_name": "Viale Jonio, Tufello, Monte Sacro, Municipio Roma III, Roma, Roma Capitale, Lazio, 00141, Italia",
   "indirizzo": "Viale Jonio, 235",
   "via_cercata": "Viale Jonio",
-  "civico_cercato": "235"
+  "civico_cercato": "235",
+  "versione": 2
  },
  "9164": {
   "lat": 41.9565547,
@@ -997,7 +1008,8 @@
   "display_name": "Via Monte Cervialto, Val Melaina, Municipio Roma III, Roma, Roma Capitale, Lazio, 00139, Italia",
   "indirizzo": "Via Monte Cervialto, 205",
   "via_cercata": "Via Monte Cervialto",
-  "civico_cercato": "205"
+  "civico_cercato": "205",
+  "versione": 2
  },
  "9165": {
   "lat": 41.9121679,
@@ -1048,12 +1060,17 @@
   "civico_cercato": "8"
  },
  "9169": {
-  "lat": null,
-  "lon": null,
-  "metodo": "non_trovato",
+  "lat": 41.9654237,
+  "lon": 12.520082,
+  "metodo": "testo+civico",
+  "civico_trovato": true,
+  "via_trovata": "Via Giovanni Boccomini",
+  "cap_trovato": "00139",
+  "display_name": "Morelli Simonetta, 25, Via Giovanni Boccomini, Serpentara, Castel Giubileo, Municipio Roma III, Saxa Rubra, Roma, Roma Capitale, Lazio, 00139, Italia",
   "indirizzo": "Via G. Boccomini, 25",
   "via_cercata": "Via G. Boccomini",
-  "civico_cercato": "25"
+  "civico_cercato": "25",
+  "versione": 2
  },
  "9170": {
   "lat": 41.9095293,
@@ -1065,7 +1082,8 @@
   "display_name": "Piazzale della Stazione Tiburtina, Nomentano, Municipio Roma II, Roma, Roma Capitale, Lazio, 00162, Italia",
   "indirizzo": "Piazzale della Stazione Tiburtina, 1",
   "via_cercata": "Piazzale della Stazione Tiburtina",
-  "civico_cercato": "1"
+  "civico_cercato": "1",
+  "versione": 2
  },
  "9171": {
   "lat": 41.8838463,
@@ -1089,7 +1107,8 @@
   "display_name": "Viale Gioacchino Rossini, Pinciano, Municipio Roma II, Roma, Roma Capitale, Lazio, 00197, Italia",
   "indirizzo": "Viale Rossini, 70/72",
   "via_cercata": "Viale Rossini",
-  "civico_cercato": "70"
+  "civico_cercato": "70",
+  "versione": 2
  },
  "9174": {
   "lat": null,
@@ -1097,11 +1116,12 @@
   "metodo": "non_trovato",
   "indirizzo": "Centro Forum Stazione Termini",
   "via_cercata": "Centro Forum Stazione Termini",
-  "civico_cercato": null
+  "civico_cercato": null,
+  "versione": 2
  },
  "9175": {
-  "lat": 41.9481786,
-  "lon": 12.60131,
+  "lat": 41.9482965,
+  "lon": 12.6008806,
   "metodo": "civico+cap",
   "civico_trovato": false,
   "via_trovata": "Via Crescenzio Conte di Sabina",
@@ -1109,15 +1129,21 @@
   "display_name": "Via Crescenzio Conte di Sabina, Settecamini, Casal Monastero, Roma, Roma Capitale, Lazio, 00131, Italia",
   "indirizzo": "Via Crescenzio Conte di Sabina, 45",
   "via_cercata": "Via Crescenzio Conte di Sabina",
-  "civico_cercato": "45"
+  "civico_cercato": "45",
+  "versione": 2
  },
  "9176": {
-  "lat": null,
-  "lon": null,
-  "metodo": "non_trovato",
+  "lat": 41.9489338,
+  "lon": 12.5712064,
+  "metodo": "testo+civico",
+  "civico_trovato": false,
+  "via_trovata": "Via Goffredo Ciaralli",
+  "cap_trovato": "00156",
+  "display_name": "Via Goffredo Ciaralli, San Basilio, Municipio Roma IV, Roma, Roma Capitale, Lazio, 00156, Italia",
   "indirizzo": "Via G. Ciaralli, 13",
   "via_cercata": "Via G. Ciaralli",
-  "civico_cercato": "13"
+  "civico_cercato": "13",
+  "versione": 2
  },
  "9177": {
   "lat": 41.9334435,
@@ -1129,7 +1155,8 @@
   "display_name": "Via Bulgaria, Parioli, Municipio Roma II, Roma, Roma Capitale, Lazio, 00196, Italia",
   "indirizzo": "Via Bulgaria, 35",
   "via_cercata": "Via Bulgaria",
-  "civico_cercato": "35"
+  "civico_cercato": "35",
+  "versione": 2
  },
  "9178": {
   "lat": 41.8430953,
@@ -1141,7 +1168,8 @@
   "display_name": "Largo Piero Bargellini, Poggio Ameno, Municipio Roma VIII, Roma, Roma Capitale, Lazio, 00147, Italia",
   "indirizzo": "Largo Bargellini, 35",
   "via_cercata": "Largo Bargellini",
-  "civico_cercato": "35"
+  "civico_cercato": "35",
+  "versione": 2
  },
  "9179": {
   "lat": 41.9985375,
@@ -1153,11 +1181,12 @@
   "display_name": "Via Ripetta, Vigna della Casa, Cerveteri, Roma Capitale, Lazio, 00052, Italia",
   "indirizzo": "Via Ripetta, 254-255",
   "via_cercata": "Via Ripetta",
-  "civico_cercato": "254"
+  "civico_cercato": "254",
+  "versione": 2
  },
  "9180": {
-  "lat": 41.9425478,
-  "lon": 12.5232628,
+  "lat": 41.9429549,
+  "lon": 12.5231422,
   "metodo": "civico+cap",
   "civico_trovato": false,
   "via_trovata": "Viale Val Padana",
@@ -1165,7 +1194,8 @@
   "display_name": "Viale Val Padana, Tufello, Monte Sacro, Municipio Roma III, Roma, Roma Capitale, Lazio, 00141, Italia",
   "indirizzo": "Viale VAL PADANA, 67/75",
   "via_cercata": "Viale VAL PADANA",
-  "civico_cercato": "67"
+  "civico_cercato": "67",
+  "versione": 2
  },
  "9181": {
   "lat": 41.9052311,
@@ -1189,7 +1219,8 @@
   "display_name": "Via dei Sardi, San Lorenzo, Municipio Roma II, Roma, Roma Capitale, Lazio, 00185, Italia",
   "indirizzo": "Via dei Sardi, 29",
   "via_cercata": "Via dei Sardi",
-  "civico_cercato": "29"
+  "civico_cercato": "29",
+  "versione": 2
  },
  "9183": {
   "lat": 41.9335211,
@@ -1201,7 +1232,8 @@
   "display_name": "Via dei Campi Flegrei, Monte Sacro, Municipio Roma III, Roma, Roma Capitale, Lazio, 00141, Italia",
   "indirizzo": "Via dei Campi Flegrei, 11",
   "via_cercata": "Via dei Campi Flegrei",
-  "civico_cercato": "11"
+  "civico_cercato": "11",
+  "versione": 2
  },
  "9184": {
   "lat": 41.8749174,
@@ -1214,5 +1246,781 @@
   "indirizzo": "Viale MARCO POLO, 35",
   "via_cercata": "Viale MARCO POLO",
   "civico_cercato": "35"
+ },
+ "9185": {
+  "lat": 41.9752938,
+  "lon": 12.5123872,
+  "metodo": "civico+cap",
+  "civico_trovato": true,
+  "via_trovata": "Via Radicofani",
+  "cap_trovato": "00138",
+  "display_name": "147, Via Radicofani, Fidene, Castel Giubileo, Municipio Roma III, Saxa Rubra, Roma, Roma Capitale, Lazio, 00138, Italia",
+  "indirizzo": "Via Radicofani, 147",
+  "via_cercata": "Via Radicofani",
+  "civico_cercato": "147",
+  "versione": 2
+ },
+ "9186": {
+  "lat": 41.9479267,
+  "lon": 12.5554277,
+  "metodo": "civico+cap",
+  "civico_trovato": false,
+  "via_trovata": "Via Ugo Ojetti",
+  "cap_trovato": "00137",
+  "display_name": "Via Ugo Ojetti, Monte Sacro Alto, Municipio Roma III, Roma, Roma Capitale, Lazio, 00137, Italia",
+  "indirizzo": "Via Ugo Ojetti, 412/a",
+  "via_cercata": "Via Ugo Ojetti",
+  "civico_cercato": "412",
+  "versione": 2
+ },
+ "9187": {
+  "lat": 41.9005051,
+  "lon": 12.4998667,
+  "metodo": "civico+cap",
+  "civico_trovato": true,
+  "via_trovata": "Piazza dei Cinquecento",
+  "cap_trovato": "00185",
+  "display_name": "49, Piazza dei Cinquecento, Castro Pretorio, Municipio Roma I, Roma, Roma Capitale, Lazio, 00185, Italia",
+  "indirizzo": "Piazza dei Cinquecento, 49-ang.Via Cavour, 2",
+  "via_cercata": "Piazza dei Cinquecento",
+  "civico_cercato": "49",
+  "versione": 2
+ },
+ "9188": {
+  "lat": 42.1385965,
+  "lon": 12.3806784,
+  "metodo": "civico+cap",
+  "civico_trovato": false,
+  "via_trovata": "Corso Vittorio Emanuele",
+  "cap_trovato": "00063",
+  "display_name": "Corso Vittorio Emanuele, Campagnano di Roma, Roma Capitale, Lazio, 00063, Italia",
+  "indirizzo": "Corso Vittorio Emanuele, 36",
+  "via_cercata": "Corso Vittorio Emanuele",
+  "civico_cercato": "36",
+  "versione": 2
+ },
+ "9189": {
+  "lat": 41.9402303,
+  "lon": 12.5281315,
+  "metodo": "civico+cap",
+  "civico_trovato": false,
+  "via_trovata": "Via Val di Cogne",
+  "cap_trovato": "00141",
+  "display_name": "Via Val di Cogne, Monte Sacro, Municipio Roma III, Roma, Roma Capitale, Lazio, 00141, Italia",
+  "indirizzo": "Via Val di Cogne, 4",
+  "via_cercata": "Via Val di Cogne",
+  "civico_cercato": "4",
+  "versione": 2
+ },
+ "9190": {
+  "lat": 41.9490592,
+  "lon": 12.5312297,
+  "metodo": "civico+cap",
+  "civico_trovato": true,
+  "via_trovata": "Via delle Isole Curzolane",
+  "cap_trovato": "00139",
+  "display_name": "Farmacia Celani, 156, Via delle Isole Curzolane, Tufello, Monte Sacro, Municipio Roma III, Roma, Roma Capitale, Lazio, 00139, Italia",
+  "indirizzo": "Via Isole Curzolane, 156",
+  "via_cercata": "Via Isole Curzolane",
+  "civico_cercato": "156",
+  "versione": 2
+ },
+ "9191": {
+  "lat": 41.9463668,
+  "lon": 12.5204029,
+  "metodo": "civico+cap",
+  "civico_trovato": false,
+  "via_trovata": "Via dei Prati Fiscali",
+  "cap_trovato": "00141",
+  "display_name": "Via dei Prati Fiscali, Val Melaina, Municipio Roma III, Roma, Roma Capitale, Lazio, 00141, Italia",
+  "indirizzo": "Via dei Prati Fiscali, 278",
+  "via_cercata": "Via dei Prati Fiscali",
+  "civico_cercato": "278",
+  "versione": 2
+ },
+ "9192": {
+  "lat": null,
+  "lon": null,
+  "metodo": "non_trovato",
+  "indirizzo": "Via A. Valenzani, 20",
+  "via_cercata": "Via A. Valenzani",
+  "civico_cercato": "20",
+  "versione": 2
+ },
+ "9193": {
+  "lat": 41.9268691,
+  "lon": 12.5158906,
+  "metodo": "civico+cap",
+  "civico_trovato": false,
+  "via_trovata": "Viale Eritrea",
+  "cap_trovato": "00199",
+  "display_name": "Viale Eritrea, Quartiere Africano, Trieste, Municipio Roma II, Roma, Roma Capitale, Lazio, 00199, Italia",
+  "indirizzo": "Viale Eritrea, 32 a",
+  "via_cercata": "Viale Eritrea",
+  "civico_cercato": "32",
+  "versione": 2
+ },
+ "9194": {
+  "lat": 41.9263206,
+  "lon": 12.4822055,
+  "metodo": "civico+cap",
+  "civico_trovato": false,
+  "via_trovata": "Via Domenico Chelini",
+  "cap_trovato": "00197",
+  "display_name": "Via Domenico Chelini, Pinciano, Municipio Roma II, Roma, Roma Capitale, Lazio, 00197, Italia",
+  "indirizzo": "Via Chelini, 34 (Piazza Euclide)",
+  "via_cercata": "Via Chelini",
+  "civico_cercato": "34",
+  "versione": 2
+ },
+ "9195": {
+  "lat": 41.8996001,
+  "lon": 12.4947809,
+  "metodo": "civico+cap",
+  "civico_trovato": true,
+  "via_trovata": "Piazza del Viminale",
+  "cap_trovato": "00184",
+  "display_name": "Farmacia Viminale, 23, Piazza del Viminale, Monti, Municipio Roma I, Roma, Roma Capitale, Lazio, 00184, Italia",
+  "indirizzo": "Piazza DEL VIMINALE, 23",
+  "via_cercata": "Piazza DEL VIMINALE",
+  "civico_cercato": "23",
+  "versione": 2
+ },
+ "9196": {
+  "lat": 41.8888571,
+  "lon": 12.4738996,
+  "metodo": "civico+cap",
+  "civico_trovato": false,
+  "via_trovata": "Piazza Sidney Sonnino",
+  "cap_trovato": "00153",
+  "display_name": "Piazza Sidney Sonnino, Trastevere, Municipio Roma I, Roma, Roma Capitale, Lazio, 00153, Italia",
+  "indirizzo": "Piazza SIDNEY SONNINO, 47",
+  "via_cercata": "Piazza SIDNEY SONNINO",
+  "civico_cercato": "47",
+  "versione": 2
+ },
+ "9197": {
+  "lat": 41.9133133,
+  "lon": 12.5210861,
+  "metodo": "civico+cap",
+  "civico_trovato": false,
+  "via_trovata": "Piazza Bologna",
+  "cap_trovato": "00162",
+  "display_name": "Piazza Bologna, Nomentano, Municipio Roma II, Roma, Roma Capitale, Lazio, 00162, Italia",
+  "indirizzo": "Piazza Bologna, 19/20",
+  "via_cercata": "Piazza Bologna",
+  "civico_cercato": "19",
+  "versione": 2
+ },
+ "9198": {
+  "lat": 41.8992548,
+  "lon": 12.4716226,
+  "metodo": "civico+cap",
+  "civico_trovato": true,
+  "via_trovata": "Via di Tor Millina",
+  "cap_trovato": "00186",
+  "display_name": "6, Via di Tor Millina, Ponte, Municipio Roma I, Roma, Roma Capitale, Lazio, 00186, Italia",
+  "indirizzo": "Via di Tor Millina, 6",
+  "via_cercata": "Via di Tor Millina",
+  "civico_cercato": "6",
+  "versione": 2
+ },
+ "9199": {
+  "lat": 41.9594449,
+  "lon": 12.5244878,
+  "metodo": "civico+cap",
+  "civico_trovato": true,
+  "via_trovata": "Piazza dell'Ateneo Salesiano",
+  "cap_trovato": "00139",
+  "display_name": "48, Piazza dell'Ateneo Salesiano, Val Melaina, Municipio Roma III, Roma, Roma Capitale, Lazio, 00139, Italia",
+  "indirizzo": "Piazza dell'Ateneo Salesiano, 48",
+  "via_cercata": "Piazza dell'Ateneo Salesiano",
+  "civico_cercato": "48",
+  "versione": 2
+ },
+ "9200": {
+  "lat": 41.9055791,
+  "lon": 12.4825827,
+  "metodo": "civico+cap",
+  "civico_trovato": true,
+  "via_trovata": "Piazza di Spagna",
+  "cap_trovato": "00187",
+  "display_name": "Farmacia Trinità dei Monti, 30, Piazza di Spagna, Campo Marzio, Municipio Roma I, Roma, Roma Capitale, Lazio, 00187, Italia",
+  "indirizzo": "Piazza di Spagna, 30",
+  "via_cercata": "Piazza di Spagna",
+  "civico_cercato": "30",
+  "versione": 2
+ },
+ "9201": {
+  "lat": 41.9295418,
+  "lon": 12.4686981,
+  "metodo": "civico+cap",
+  "civico_trovato": false,
+  "via_trovata": "Via Flaminia",
+  "cap_trovato": "00196",
+  "display_name": "Via Flaminia, Parioli, Municipio Roma II, Roma, Roma Capitale, Lazio, 00196, Italia",
+  "indirizzo": "Via Flaminia, 115/117",
+  "via_cercata": "Via Flaminia",
+  "civico_cercato": "115",
+  "versione": 2
+ },
+ "9202": {
+  "lat": 41.7744113,
+  "lon": 12.3791843,
+  "metodo": "civico+cap",
+  "civico_trovato": false,
+  "via_trovata": "Via Gigi Chessa",
+  "cap_trovato": "00125",
+  "display_name": "Via Gigi Chessa, Acilia Sud, Municipio Roma X, Malafede, Roma, Roma Capitale, Lazio, 00125, Italia",
+  "indirizzo": "Via Gigi Chessa, 364",
+  "via_cercata": "Via Gigi Chessa",
+  "civico_cercato": "364",
+  "versione": 2
+ },
+ "9203": {
+  "lat": 41.9453665,
+  "lon": 12.5485592,
+  "metodo": "testo+civico",
+  "civico_trovato": false,
+  "via_trovata": "Via Maria Barbara Tosatti",
+  "cap_trovato": "00137",
+  "display_name": "Via Maria Barbara Tosatti, Monte Sacro Alto, Municipio Roma III, Roma, Roma Capitale, Lazio, 00137, Italia",
+  "indirizzo": "Via M. B. Tosatti, 39",
+  "via_cercata": "Via M. B. Tosatti",
+  "civico_cercato": "39",
+  "versione": 2
+ },
+ "9204": {
+  "lat": 41.9319599,
+  "lon": 12.5193475,
+  "metodo": "civico+cap",
+  "civico_trovato": false,
+  "via_trovata": "Viale Libia",
+  "cap_trovato": "00199",
+  "display_name": "Viale Libia, Quartiere Africano, Trieste, Municipio Roma II, Roma, Roma Capitale, Lazio, 00199, Italia",
+  "indirizzo": "Viale Libia, 114",
+  "via_cercata": "Viale Libia",
+  "civico_cercato": "114",
+  "versione": 2
+ },
+ "9205": {
+  "lat": 41.8977758,
+  "lon": 12.496637,
+  "metodo": "civico+cap",
+  "civico_trovato": true,
+  "via_trovata": "Via Cavour",
+  "cap_trovato": "00184",
+  "display_name": "Farmacia Savelli, 88, Via Cavour, Monti, Municipio Roma I, Roma, Roma Capitale, Lazio, 00184, Italia",
+  "indirizzo": "Via Cavour, 88/90",
+  "via_cercata": "Via Cavour",
+  "civico_cercato": "88",
+  "versione": 2
+ },
+ "9206": {
+  "lat": 41.9123188,
+  "lon": 12.5245849,
+  "metodo": "civico+cap",
+  "civico_trovato": false,
+  "via_trovata": "Via Lorenzo il Magnifico",
+  "cap_trovato": "00162",
+  "display_name": "Via Lorenzo il Magnifico, Nomentano, Municipio Roma II, Roma, Roma Capitale, Lazio, 00162, Italia",
+  "indirizzo": "Via via Lorenzo il Magnifico, 116A",
+  "via_cercata": "Via Lorenzo il Magnifico",
+  "civico_cercato": "116",
+  "versione": 2
+ },
+ "9207": {
+  "lat": 41.9072138,
+  "lon": 12.4962089,
+  "metodo": "testo+civico",
+  "civico_trovato": true,
+  "via_trovata": "Via Quintino Sella",
+  "cap_trovato": "00187",
+  "display_name": "28, Via Quintino Sella, Sallustiano, Municipio Roma I, Roma, Roma Capitale, Lazio, 00187, Italia",
+  "indirizzo": "Via Q. Sella, 28",
+  "via_cercata": "Via Q. Sella",
+  "civico_cercato": "28",
+  "versione": 2
+ },
+ "9208": {
+  "lat": 41.9240073,
+  "lon": 12.4846814,
+  "metodo": "civico+cap",
+  "civico_trovato": false,
+  "via_trovata": "Via Giovanni Antonelli",
+  "cap_trovato": "00197",
+  "display_name": "Via Giovanni Antonelli, Pinciano, Municipio Roma II, Roma, Roma Capitale, Lazio, 00197, Italia",
+  "indirizzo": "Via GIOVANNI ANTONELLI, 30",
+  "via_cercata": "Via GIOVANNI ANTONELLI",
+  "civico_cercato": "30",
+  "versione": 2
+ },
+ "9209": {
+  "lat": 41.9272018,
+  "lon": 12.4927608,
+  "metodo": "civico+cap",
+  "civico_trovato": true,
+  "via_trovata": "Via di Villa San Filippo",
+  "cap_trovato": "00197",
+  "display_name": "Farmacia Vita, 18, Via di Villa San Filippo, Parioli, Municipio Roma II, Roma, Roma Capitale, Lazio, 00197, Italia",
+  "indirizzo": "Via Villa S. Filippo, 18",
+  "via_cercata": "Via Villa S. Filippo",
+  "civico_cercato": "18",
+  "versione": 2
+ },
+ "9210": {
+  "lat": 41.8895638,
+  "lon": 12.470508,
+  "metodo": "testo+civico",
+  "civico_trovato": false,
+  "via_trovata": "Piazza di Santa Maria in Trastevere",
+  "cap_trovato": "00153",
+  "display_name": "Piazza di Santa Maria in Trastevere, Trastevere, Municipio Roma I, Roma, Roma Capitale, Lazio, 00153, Italia",
+  "indirizzo": "Piazza S. Maria in Trastevere, 7",
+  "via_cercata": "Piazza S. Maria in Trastevere",
+  "civico_cercato": "7",
+  "versione": 2
+ },
+ "9211": {
+  "lat": 41.8910825,
+  "lon": 12.5022586,
+  "metodo": "civico+cap",
+  "civico_trovato": true,
+  "via_trovata": "Via Merulana",
+  "cap_trovato": "00185",
+  "display_name": "Farmacia Merulana, 185, Via Merulana, Monti, Municipio Roma I, Roma, Roma Capitale, Lazio, 00185, Italia",
+  "indirizzo": "Via Merulana, 185/187",
+  "via_cercata": "Via Merulana",
+  "civico_cercato": "185",
+  "versione": 2
+ },
+ "9212": {
+  "lat": 41.9545645,
+  "lon": 12.5280034,
+  "metodo": "testo+civico",
+  "civico_trovato": false,
+  "via_trovata": "Via Angiolo Cabrini",
+  "cap_trovato": "00139",
+  "display_name": "Via Angiolo Cabrini, Val Melaina, Municipio Roma III, Roma, Roma Capitale, Lazio, 00139, Italia",
+  "indirizzo": "Via A. Cabrini, 32",
+  "via_cercata": "Via A. Cabrini",
+  "civico_cercato": "32",
+  "versione": 2
+ },
+ "9213": {
+  "lat": 41.9015699,
+  "lon": 12.503234,
+  "metodo": "civico+cap",
+  "civico_trovato": true,
+  "via_trovata": "Via Marsala",
+  "cap_trovato": "00185",
+  "display_name": "Farmacrimi, 29, Via Marsala, Esquilino, Municipio Roma I, Roma, Roma Capitale, Lazio, 00185, Italia",
+  "indirizzo": "Via Marsala, 29",
+  "via_cercata": "Via Marsala",
+  "civico_cercato": "29",
+  "versione": 2
+ },
+ "9214": {
+  "lat": 41.8912907,
+  "lon": 12.4679913,
+  "metodo": "civico+cap",
+  "civico_trovato": true,
+  "via_trovata": "Piazza della Scala",
+  "cap_trovato": "00153",
+  "display_name": "Farmacia Santa Maria della Scala, 23, Piazza della Scala, Trastevere, Municipio Roma I, Roma, Roma Capitale, Lazio, 00153, Italia",
+  "indirizzo": "Piazza della Scala, 23",
+  "via_cercata": "Piazza della Scala",
+  "civico_cercato": "23",
+  "versione": 2
+ },
+ "9215": {
+  "lat": 41.9123188,
+  "lon": 12.5245849,
+  "metodo": "civico+cap",
+  "civico_trovato": false,
+  "via_trovata": "Via Lorenzo il Magnifico",
+  "cap_trovato": "00162",
+  "display_name": "Via Lorenzo il Magnifico, Nomentano, Municipio Roma II, Roma, Roma Capitale, Lazio, 00162, Italia",
+  "indirizzo": "Via Lorenzo il Magnifico, 60",
+  "via_cercata": "Via Lorenzo il Magnifico",
+  "civico_cercato": "60",
+  "versione": 2
+ },
+ "9216": {
+  "lat": 41.8980333,
+  "lon": 12.4996157,
+  "metodo": "civico+cap",
+  "civico_trovato": true,
+  "via_trovata": "Via Gioberti",
+  "cap_trovato": "00185",
+  "display_name": "Farmacia Esquilino, 79, Via Gioberti, Castro Pretorio, Municipio Roma I, Roma, Roma Capitale, Lazio, 00185, Italia",
+  "indirizzo": "Via Gioberti, 79",
+  "via_cercata": "Via Gioberti",
+  "civico_cercato": "79",
+  "versione": 2
+ },
+ "9217": {
+  "lat": 41.8902812,
+  "lon": 12.506826,
+  "metodo": "testo+civico",
+  "civico_trovato": false,
+  "via_trovata": "Via Emanuele Filiberto",
+  "cap_trovato": "00185",
+  "display_name": "Via Emanuele Filiberto, Esquilino, Municipio Roma I, Roma, Roma Capitale, Lazio, 00185, Italia",
+  "indirizzo": "Via E. Filiberto, 35",
+  "via_cercata": "Via E. Filiberto",
+  "civico_cercato": "35",
+  "versione": 2
+ },
+ "9218": {
+  "lat": 41.903368,
+  "lon": 12.4884276,
+  "metodo": "civico+cap",
+  "civico_trovato": true,
+  "via_trovata": "Piazza Barberini",
+  "cap_trovato": "00187",
+  "display_name": "Farmacia Internazionale, 49, Piazza Barberini, Trevi, Municipio Roma I, Roma, Roma Capitale, Lazio, 00187, Italia",
+  "indirizzo": "Piazza Barberini, 49",
+  "via_cercata": "Piazza Barberini",
+  "civico_cercato": "49",
+  "versione": 2
+ },
+ "9219": {
+  "lat": 41.923268,
+  "lon": 12.4771267,
+  "metodo": "civico+cap",
+  "civico_trovato": true,
+  "via_trovata": "Via Antonio Gramsci",
+  "cap_trovato": "00197",
+  "display_name": "1, Via Antonio Gramsci, Pinciano, Municipio Roma II, Roma, Roma Capitale, Lazio, 00197, Italia",
+  "indirizzo": "Via Gramsci, 1",
+  "via_cercata": "Via Gramsci",
+  "civico_cercato": "1",
+  "versione": 2
+ },
+ "9220": {
+  "lat": 41.8956417,
+  "lon": 12.5031673,
+  "metodo": "civico+cap",
+  "civico_trovato": false,
+  "via_trovata": "Piazza Vittorio Emanuele Secondo",
+  "cap_trovato": "00185",
+  "display_name": "Piazza Vittorio Emanuele Secondo, Esquilino, Municipio Roma I, Roma, Roma Capitale, Lazio, 00185, Italia",
+  "indirizzo": "Piazza Vittorio Emanuele II, 116-118",
+  "via_cercata": "Piazza Vittorio Emanuele II",
+  "civico_cercato": "116",
+  "versione": 2
+ },
+ "9221": {
+  "lat": 41.9049931,
+  "lon": 12.4953741,
+  "metodo": "civico+cap",
+  "civico_trovato": true,
+  "via_trovata": "Via Venti Settembre",
+  "cap_trovato": "00185",
+  "display_name": "98, Via Venti Settembre, Castro Pretorio, Municipio Roma I, Roma, Roma Capitale, Lazio, 00185, Italia",
+  "indirizzo": "Via XX Settembre, 98/B",
+  "via_cercata": "Via XX Settembre",
+  "civico_cercato": "98",
+  "versione": 2
+ },
+ "9222": {
+  "lat": 41.9079073,
+  "lon": 12.499408,
+  "metodo": "civico+cap",
+  "civico_trovato": true,
+  "via_trovata": "Via Venti Settembre",
+  "cap_trovato": "00187",
+  "display_name": "Settembre 95, 95, Via Venti Settembre, Castro Pretorio, Municipio Roma I, Roma, Roma Capitale, Lazio, 00187, Italia",
+  "indirizzo": "Via XX Settembre, 95/a",
+  "via_cercata": "Via XX Settembre",
+  "civico_cercato": "95",
+  "versione": 2
+ },
+ "9223": {
+  "lat": 41.9961563,
+  "lon": 12.4813354,
+  "metodo": "via+cap",
+  "civico_trovato": false,
+  "via_trovata": "Via San Daniele del Friuli",
+  "cap_trovato": "00188",
+  "display_name": "Via San Daniele del Friuli, Labaro, Municipio Roma XV, Casale Prima Porta, Roma, Roma Capitale, Lazio, 00188, Italia",
+  "indirizzo": "Via San Daniele del Friuli, snc",
+  "via_cercata": "Via San Daniele del Friuli",
+  "civico_cercato": null,
+  "versione": 2
+ },
+ "9224": {
+  "lat": 41.8950578,
+  "lon": 12.5053107,
+  "metodo": "civico+cap",
+  "civico_trovato": true,
+  "via_trovata": "Piazza Vittorio Emanuele II",
+  "cap_trovato": "00185",
+  "display_name": "Longo, 46, Piazza Vittorio Emanuele II, Esquilino, Municipio Roma I, Roma, Roma Capitale, Lazio, 00185, Italia",
+  "indirizzo": "Piazza Vittorio Emanuele II, 46",
+  "via_cercata": "Piazza Vittorio Emanuele II",
+  "civico_cercato": "46",
+  "versione": 2
+ },
+ "9225": {
+  "lat": 41.8820521,
+  "lon": 12.4767002,
+  "metodo": "civico+cap",
+  "civico_trovato": false,
+  "via_trovata": "Via Marmorata",
+  "cap_trovato": "00153",
+  "display_name": "Via Marmorata, Testaccio, Municipio Roma I, Roma, Roma Capitale, Lazio, 00153, Italia",
+  "indirizzo": "Via Marmorata, 133-135",
+  "via_cercata": "Via Marmorata",
+  "civico_cercato": "133",
+  "versione": 2
+ },
+ "9226": {
+  "lat": 41.9510286,
+  "lon": 12.5180367,
+  "metodo": "civico+cap",
+  "civico_trovato": false,
+  "via_trovata": "Via Giuseppe De Nava",
+  "cap_trovato": "00139",
+  "display_name": "Via Giuseppe De Nava, Val Melaina, Municipio Roma III, Roma, Roma Capitale, Lazio, 00139, Italia",
+  "indirizzo": "Via Giuseppe De Nava, 9",
+  "via_cercata": "Via Giuseppe De Nava",
+  "civico_cercato": "9",
+  "versione": 2
+ },
+ "9227": {
+  "lat": 41.9268419,
+  "lon": 12.5097489,
+  "metodo": "civico+cap",
+  "civico_trovato": false,
+  "via_trovata": "Piazza Crati",
+  "cap_trovato": "00199",
+  "display_name": "Piazza Crati, Trieste, Municipio Roma II, Roma, Roma Capitale, Lazio, 00199, Italia",
+  "indirizzo": "Piazza Crati, 27",
+  "via_cercata": "Piazza Crati",
+  "civico_cercato": "27",
+  "versione": 2
+ },
+ "9228": {
+  "lat": 41.9150459,
+  "lon": 12.5231614,
+  "metodo": "civico+cap",
+  "civico_trovato": false,
+  "via_trovata": "Via Livorno",
+  "cap_trovato": "00162",
+  "display_name": "Via Livorno, Nomentano, Municipio Roma II, Roma, Roma Capitale, Lazio, 00162, Italia",
+  "indirizzo": "Via Livorno, 27/a",
+  "via_cercata": "Via Livorno",
+  "civico_cercato": "27",
+  "versione": 2
+ },
+ "9229": {
+  "lat": 41.9235402,
+  "lon": 12.4878328,
+  "metodo": "civico+cap",
+  "civico_trovato": false,
+  "via_trovata": "Via Antonio Bertoloni",
+  "cap_trovato": "00197",
+  "display_name": "Via Antonio Bertoloni, Pinciano, Municipio Roma II, Roma, Roma Capitale, Lazio, 00197, Italia",
+  "indirizzo": "Via Bertoloni, 5",
+  "via_cercata": "Via Bertoloni",
+  "civico_cercato": "5",
+  "versione": 2
+ },
+ "9230": {
+  "lat": 41.8007065,
+  "lon": 12.4730251,
+  "metodo": "civico+cap",
+  "civico_trovato": false,
+  "via_trovata": "Via Alberto Moravia",
+  "cap_trovato": "00143",
+  "display_name": "Via Alberto Moravia, Fonte Ostiense, Municipio Roma IX, Roma, Roma Capitale, Lazio, 00143, Italia",
+  "indirizzo": "Via Alberto Moravia, 257",
+  "via_cercata": "Via Alberto Moravia",
+  "civico_cercato": "257",
+  "versione": 2
+ },
+ "9231": {
+  "lat": 41.9154569,
+  "lon": 12.5068264,
+  "metodo": "civico+cap",
+  "civico_trovato": true,
+  "via_trovata": "Corso Trieste",
+  "cap_trovato": "00198",
+  "display_name": "Farmacia unica Nova Salus, 29, Corso Trieste, Trieste, Municipio Roma II, Roma, Roma Capitale, Lazio, 00198, Italia",
+  "indirizzo": "Corso TRIESTE, 29 ABCD",
+  "via_cercata": "Corso TRIESTE",
+  "civico_cercato": "29",
+  "versione": 2
+ },
+ "9232": {
+  "lat": 41.9159955,
+  "lon": 12.5066454,
+  "metodo": "civico+cap",
+  "civico_trovato": false,
+  "via_trovata": "Corso Trieste",
+  "cap_trovato": "00198",
+  "display_name": "Corso Trieste, Trieste, Municipio Roma II, Roma, Roma Capitale, Lazio, 00198, Italia",
+  "indirizzo": "Corso Trieste, 78",
+  "via_cercata": "Corso Trieste",
+  "civico_cercato": "78",
+  "versione": 2
+ },
+ "9233": {
+  "lat": 41.9054049,
+  "lon": 12.503876,
+  "metodo": "civico+cap",
+  "civico_trovato": true,
+  "via_trovata": "Via San Martino della Battaglia",
+  "cap_trovato": "00185",
+  "display_name": "Farmacia Indipendenza, 10, Via San Martino della Battaglia, Castro Pretorio, Municipio Roma I, Roma, Roma Capitale, Lazio, 00185, Italia",
+  "indirizzo": "Via S. Martino Battaglia, 10",
+  "via_cercata": "Via S. Martino Battaglia",
+  "civico_cercato": "10",
+  "versione": 2
+ },
+ "9234": {
+  "lat": 41.9019741,
+  "lon": 12.4817965,
+  "metodo": "civico+cap",
+  "civico_trovato": true,
+  "via_trovata": "Via del Tritone",
+  "cap_trovato": "00187",
+  "display_name": "Anna Virgili S.r.l., 16, Via del Tritone, Trevi, Municipio Roma I, Roma, Roma Capitale, Lazio, 00187, Italia",
+  "indirizzo": "Via del Tritone, 16",
+  "via_cercata": "Via del Tritone",
+  "civico_cercato": "16",
+  "versione": 2
+ },
+ "9235": {
+  "lat": 41.8951085,
+  "lon": 12.471218,
+  "metodo": "civico+cap",
+  "civico_trovato": false,
+  "via_trovata": "Piazza Farnese",
+  "cap_trovato": "00186",
+  "display_name": "Piazza Farnese, Regola, Municipio Roma I, Roma, Roma Capitale, Lazio, 00186, Italia",
+  "indirizzo": "Piazza Farnese, 42",
+  "via_cercata": "Piazza Farnese",
+  "civico_cercato": "42",
+  "versione": 2
+ },
+ "9236": {
+  "lat": 41.9254871,
+  "lon": 12.4662459,
+  "metodo": "civico+cap",
+  "civico_trovato": false,
+  "via_trovata": "Viale del Vignola",
+  "cap_trovato": "00196",
+  "display_name": "Viale del Vignola, Flaminio, Municipio Roma II, Roma, Roma Capitale, Lazio, 00196, Italia",
+  "indirizzo": "Viale del Vignola, 113",
+  "via_cercata": "Viale del Vignola",
+  "civico_cercato": "113",
+  "versione": 2
+ },
+ "9237": {
+  "lat": 41.9419696,
+  "lon": 12.5650779,
+  "metodo": "civico+cap",
+  "civico_trovato": false,
+  "via_trovata": "Via Andrea Checchi",
+  "cap_trovato": "00137",
+  "display_name": "Via Andrea Checchi, Ponte Mammolo, Municipio Roma IV, Roma, Roma Capitale, Lazio, 00137, Italia",
+  "indirizzo": "Via Andrea Checchi, 19",
+  "via_cercata": "Via Andrea Checchi",
+  "civico_cercato": "19",
+  "versione": 2
+ },
+ "9238": {
+  "lat": 41.9082797,
+  "lon": 12.4898689,
+  "metodo": "civico+cap",
+  "civico_trovato": false,
+  "via_trovata": "Via Sicilia",
+  "cap_trovato": "00817",
+  "display_name": "Via Sicilia, Ludovisi, Municipio Roma I, Roma, Roma Capitale, Lazio, 00817, Italia",
+  "indirizzo": "Via SICILIA, 155",
+  "via_cercata": "Via SICILIA",
+  "civico_cercato": "155",
+  "versione": 2
+ },
+ "9239": {
+  "lat": 41.9236011,
+  "lon": 12.5027416,
+  "metodo": "civico+cap",
+  "civico_trovato": false,
+  "via_trovata": "Via Salaria",
+  "cap_trovato": "00198",
+  "display_name": "Via Salaria, Trieste, Parioli, Municipio Roma II, Roma, Roma Capitale, Lazio, 00198, Italia",
+  "indirizzo": "Via Salaria, 34/36/38",
+  "via_cercata": "Via Salaria",
+  "civico_cercato": "34",
+  "versione": 2
+ },
+ "9240": {
+  "lat": 41.8769655,
+  "lon": 12.4822075,
+  "metodo": "civico+cap",
+  "civico_trovato": true,
+  "via_trovata": "Piazza di Porta San Paolo",
+  "cap_trovato": "00153",
+  "display_name": "Farmacia Piramide, 9, Piazza di Porta San Paolo, San Saba, Municipio Roma I, Roma, Roma Capitale, Lazio, 00153, Italia",
+  "indirizzo": "Piazza di Porta San Paolo, 9,10,11",
+  "via_cercata": "Piazza di Porta San Paolo",
+  "civico_cercato": "9",
+  "versione": 2
+ },
+ "9241": {
+  "lat": 41.9033629,
+  "lon": 12.4823668,
+  "metodo": "civico+cap",
+  "civico_trovato": false,
+  "via_trovata": "Via della Mercede",
+  "cap_trovato": "00187",
+  "display_name": "Via della Mercede, Colonna, Municipio Roma I, Roma, Roma Capitale, Lazio, 00187, Italia",
+  "indirizzo": "Via DELLA MERCEDE, 41",
+  "via_cercata": "Via DELLA MERCEDE",
+  "civico_cercato": "41",
+  "versione": 2
+ },
+ "9242": {
+  "lat": 41.8974005,
+  "lon": 12.5127079,
+  "metodo": "civico+cap",
+  "civico_trovato": true,
+  "via_trovata": "Via Tiburtina",
+  "cap_trovato": "00185",
+  "display_name": "40, Via Tiburtina, San Lorenzo, Municipio Roma II, Roma, Roma Capitale, Lazio, 00185, Italia",
+  "indirizzo": "Via Tiburtina, 40",
+  "via_cercata": "Via Tiburtina",
+  "civico_cercato": "40",
+  "versione": 2
+ },
+ "9243": {
+  "lat": 41.9486558,
+  "lon": 12.5451766,
+  "metodo": "civico+cap",
+  "civico_trovato": false,
+  "via_trovata": "Via Franco Sacchetti",
+  "cap_trovato": "00137",
+  "display_name": "Via Franco Sacchetti, Monte Sacro Alto, Municipio Roma III, Roma, Roma Capitale, Lazio, 00137, Italia",
+  "indirizzo": "Via Franco Sacchetti, 93",
+  "via_cercata": "Via Franco Sacchetti",
+  "civico_cercato": "93",
+  "versione": 2
+ },
+ "9244": {
+  "lat": 41.7868767,
+  "lon": 12.392116,
+  "metodo": "civico+cap",
+  "civico_trovato": true,
+  "via_trovata": "Via Gustavo Cacini",
+  "cap_trovato": "00125",
+  "display_name": "Farmacia Totino, 59, Via Gustavo Cacini, Acilia Sud, Municipio Roma X, Giardino di Roma, Roma, Roma Capitale, Lazio, 00125, Italia",
+  "indirizzo": "Via Gustavo Cacini, 59/69",
+  "via_cercata": "Via Gustavo Cacini",
+  "civico_cercato": "59",
+  "versione": 2
  }
 }
