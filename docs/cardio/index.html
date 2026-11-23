@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ponte cardiologo–MMG</title>
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#a8131e">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<style>
+/* VOICE: clinico, sobrio, da studio medico — poche tinte, molta aria.
+   IDEA: la carta intestata del cardiologo che si compila mentre scrive.
+   PICTURE: il foglio A4 vivo, aggiornato a ogni campo, accanto al modulo.
+   COLOUR and TYPE: pietra chiara, inchiostro scuro, un rosso cardiologico; Inter per l'interfaccia, Source Serif per il foglio.
+   LAYOUT: modulo a sinistra in una colonna calma, foglio a destra; sotto 900px impilati. */
+:root{color-scheme:light dark;--bg:light-dark(#ecebe8,#131315);--panel:light-dark(#ffffff,#1d1d21);--ink:light-dark(#16181d,#ecebe8);--mute:light-dark(#5b5f68,#a3a6ad);--line:light-dark(#d9d7d2,#33343a);--red:light-dark(#a8131e,#ff6b6b);--redbg:light-dark(#fbeaea,#3a1a1c)}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 Inter,system-ui,sans-serif;overflow-x:clip}
+.band{padding:clamp(24px,4vw,52px) max(5vw,16px)}
+header h1{font-size:clamp(30px,4vw,44px);line-height:1.05;margin:0 0 8px;text-wrap:balance;letter-spacing:-.01em}
+header p{margin:0;color:var(--mute);max-width:62ch}
+.wrap{max-width:1240px;margin:0 auto}
+.tabs{display:flex;gap:6px;margin:22px 0 0;flex-wrap:wrap}
+.tabs button{font:600 15px Inter,sans-serif;min-height:44px;padding:0 18px;border-radius:999px;border:1px solid var(--line);background:var(--panel);color:var(--ink);cursor:pointer}
+.tabs button[aria-selected=true]{background:var(--red);border-color:var(--red);color:#fff}
+.grid{display:grid;grid-template-columns:minmax(0,380px) minmax(0,1fr);gap:28px;align-items:start;padding-top:22px}
+form{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px}
+fieldset{border:0;padding:0;margin:0 0 18px}
+legend{font-weight:700;font-size:15px;margin-bottom:8px}
+label{display:block;font-size:13px;color:var(--mute);margin:10px 0 4px}
+input,select,textarea{width:100%;font:16px Inter,sans-serif;min-height:44px;padding:9px 11px;border:1px solid var(--line);border-radius:9px;background:var(--bg);color:var(--ink)}
+textarea{min-height:76px;resize:vertical}
+input:focus,select:focus,textarea:focus,button:focus-visible{outline:2px solid var(--red);outline-offset:1px}
+.row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.chips button{font:500 13px Inter,sans-serif;min-height:34px;padding:0 10px;border-radius:8px;border:1px dashed var(--line);background:transparent;color:var(--ink);cursor:pointer}
+.check{display:flex;gap:10px;align-items:center;font-size:15px;color:var(--ink);margin-top:12px}
+.check input{width:22px;min-height:22px;height:22px;accent-color:var(--red)}
+.hint{font-size:13px;color:var(--mute);margin:6px 0 0}
+.actions{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+.actions button{font:600 15px Inter,sans-serif;min-height:44px;padding:0 16px;border-radius:9px;border:1px solid var(--ink);background:var(--ink);color:var(--bg);cursor:pointer}
+.actions button.sec{background:transparent;color:var(--ink)}
+#msg{font-size:13px;color:var(--mute);align-self:center}
+.sheet{background:#fff;color:#1a1a1a;border-radius:4px;box-shadow:0 1px 0 rgba(0,0,0,.05),0 18px 40px -18px rgba(0,0,0,.35);padding:clamp(22px,5vw,56px);font:16px/1.6 "Source Serif 4",Georgia,serif;aspect-ratio:210/297;min-height:0;overflow:hidden}
+.sheet .hd{display:flex;justify-content:space-between;gap:16px;border-bottom:2px solid #a8131e;padding-bottom:12px;margin-bottom:22px;font-family:Inter,sans-serif;flex-wrap:wrap}
+.sheet .hd b{font-size:18px;display:block}
+.sheet .hd span{font-size:13px;color:#555}
+.sheet h2{font:600 24px/1.15 "Source Serif 4",serif;margin:0 0 14px}
+.sheet p{margin:0 0 12px}
+.kpis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:16px 0;font-family:Inter,sans-serif}
+.kpis div{border:1px solid #e3e1dc;border-radius:8px;padding:10px 12px}
+.kpis small{display:block;font-size:13px;color:#666}
+.kpis strong{font-size:clamp(18px,2.4vw,26px);white-space:nowrap}
+.kpis .hot{background:#fbeaea;border-color:#f0c9c9}.kpis .hot strong{color:#a8131e}
+.todo{list-style:none;padding:0;margin:14px 0;font-family:Inter,sans-serif}
+.todo li{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid #eee;padding:10px 0;flex-wrap:wrap}
+.todo b{white-space:nowrap;color:#a8131e}
+.sign{margin-top:26px}
+.foot{font:13px Inter,sans-serif;color:#777;margin-top:22px;border-top:1px solid #eee;padding-top:10px}
+.sample{font-size:13px;color:var(--mute);margin:10px 0 0}
+.privacy{display:flex;gap:10px;align-items:flex-start;background:var(--redbg);border-radius:10px;padding:12px 14px;font-size:14px;margin-top:14px}
+[hidden]{display:none!important}
+.calc{background:var(--bg);border-radius:12px;padding:14px}
+.row3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.res{display:flex;gap:16px;flex-wrap:wrap;margin:12px 0 8px}
+.res div small{display:block;font-size:13px;color:var(--mute)}
+.res div strong{font-size:26px;white-space:nowrap}
+.res .warn{color:var(--red);font-size:14px;font-weight:600}
+.use{font:600 14px Inter,sans-serif;min-height:44px;width:100%;border-radius:9px;border:1px solid var(--red);background:transparent;color:var(--red);cursor:pointer}
+.exp{margin-top:12px;font-size:14px}
+.exp .r{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 10px;padding:7px 0;border-top:1px solid var(--line)}
+.exp .bar{grid-column:1/-1;height:6px;border-radius:3px;background:var(--line);overflow:hidden}
+.exp .bar i{display:block;height:100%;background:var(--mute)}
+.exp .ok i{background:var(--red)}
+.exp b{white-space:nowrap}
+@media(max-width:900px){.grid{grid-template-columns:minmax(0,1fr)}.sheet{aspect-ratio:auto}}
+@media(max-width:600px){.kpis{grid-template-columns:minmax(0,1fr)}.row{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:380px){.row3{grid-template-columns:minmax(0,1fr)}}
+@media print{body{background:#fff}header,form,.actions,.tabs,.sample,.privacy{display:none!important}.band{padding:0}.grid{display:block;padding:0}.sheet{box-shadow:none;aspect-ratio:auto;padding:18mm;border-radius:0}}
+@media(prefers-reduced-motion:no-preference){.sheet{transition:opacity .2s}.sheet.flash{opacity:.85}}
+</style>
+</head>
+<body>
+<div class="band"><div class="wrap">
+<header>
+<h1>Dalla visita cardiologica al medico di famiglia, in 30 secondi</h1>
+<p>Il cardiologo compila una volta sola: escono la lettera per il MMG e la scheda per il paziente. Nulla viene salvato né inviato.</p>
+</header>
+<div class="tabs" role="tablist">
+<button role="tab" id="t-lettera" aria-selected="true">Lettera al MMG</button>
+<button role="tab" id="t-scheda" aria-selected="false">Scheda paziente</button>
+</div>
+
+<div class="grid">
+<form id="f" autocomplete="off">
+<fieldset><legend>Cardiologo</legend>
+<label for="medico">Nome</label><input id="medico" value="Dott. Marco Bianchi">
+<label for="studio">Studio</label><input id="studio" value="Studio di Cardiologia, Via Appia Nuova 100, Roma">
+<label for="contatti">Contatti</label><input id="contatti" value="06 1234567 · studio.bianchi@email.it">
+<p class="hint">Questi dati restano solo su questo dispositivo, per non riscriverli ogni volta.</p>
+</fieldset>
+<fieldset><legend>Paziente e visita</legend>
+<div class="row">
+<div><label for="paz">Paziente (anche solo iniziali)</label><input id="paz" value="M. R."></div>
+<div><label for="data">Data visita</label><input id="data" type="date"></div>
+</div>
+<label for="rischio">Categoria di rischio (ESC/EAS)</label>
+<select id="rischio">
+<option value="40">Estremo – evento recidivo entro 2 anni (LDL &lt; 40)</option>
+<option value="55" selected>Molto alto (LDL &lt; 55 e riduzione ≥ 50%)</option>
+<option value="70">Alto (LDL &lt; 70 e riduzione ≥ 50%)</option>
+<option value="100">Moderato (LDL &lt; 100)</option>
+<option value="116">Basso (LDL &lt; 116)</option>
+</select>
+<label for="ldl">LDL attuale (mg/dL)</label><input id="ldl" type="number" inputmode="numeric" min="20" max="400" value="112">
+</fieldset>
+<fieldset class="calc"><legend>Calcolatore LDL</legend>
+<div class="row3">
+<div><label for="ct">Colesterolo totale</label><input id="ct" type="number" inputmode="numeric" value="190"></div>
+<div><label for="hdl">HDL</label><input id="hdl" type="number" inputmode="numeric" value="48"></div>
+<div><label for="tg">Trigliceridi</label><input id="tg" type="number" inputmode="numeric" value="150"></div>
+</div>
+<div class="res" id="res"></div>
+<button type="button" class="use" id="use">Usa questo LDL nella lettera</button>
+<div class="exp" id="exp"></div>
+<p class="hint">Formula di Friedewald (valida con trigliceridi sotto 400 mg/dL). Le riduzioni attese sono medie indicative dalle linee guida ESC/EAS e variano da paziente a paziente.</p>
+</fieldset>
+<fieldset><legend>Terapia</legend>
+<label for="terapia">Terapia ipolipemizzante indicata</label>
+<textarea id="terapia">Rosumibe (rosuvastatina/ezetimibe) 20/10 mg, confezione da 60 compresse – 1 compressa al giorno</textarea>
+<div class="chips" id="chips"></div>
+<div class="row">
+<div><label for="pack">Compresse per confezione</label><select id="pack"><option value="30">30 compresse</option><option value="60" selected>60 compresse</option></select></div>
+<div><label for="sett">Controllo a</label><select id="sett"><option value="4">4 settimane</option><option value="8" selected>8 settimane</option><option value="12">12 settimane</option></select></div>
+</div>
+<label class="check"><input type="checkbox" id="nota13" checked> Prescrivibile a carico SSN (Nota 13 AIFA)</label>
+<label for="note">Note per il collega (facoltative)</label>
+<textarea id="note" placeholder="Es. ecocardiogramma di controllo tra 12 mesi"></textarea>
+</fieldset>
+</form>
+
+<div>
+<div class="actions">
+<button type="button" id="print">Stampa / salva PDF</button>
+<button type="button" class="sec" id="copy">Copia testo</button>
+<span id="msg" aria-live="polite"></span>
+</div>
+<article class="sheet" id="sheet"></article>
+<p class="sample">Dati di esempio: sostituiscili con quelli della visita.</p>
+<div class="privacy"><span>🔒</span><span>Nessun dato del paziente viene salvato o trasmesso: il documento esiste solo su questo schermo finché non lo stampi.</span></div>
+</div>
+</div>
+</div></div>
+
+<script>
+{
+const $=id=>document.getElementById(id);
+const doses=['5/10','10/10','20/10','40/10'];
+$('chips').innerHTML=doses.map(d=>`<button type="button" data-d="${d}">Rosumibe ${d} mg</button>`).join('');
+const riskName={40:'estremo',55:'molto alto',70:'alto',100:'moderato',116:'basso'};
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const fmt=d=>d.toLocaleDateString('it-IT',{day:'2-digit',month:'long',year:'numeric'});
+const addDays=(d,n)=>{const x=new Date(d);x.setDate(x.getDate()+n);return x};
+let tab='lettera';
+const saved=['medico','studio','contatti'];
+try{saved.forEach(k=>{const v=localStorage.getItem('pc_'+k);if(v)$(k).value=v})}catch(e){}
+$('data').valueAsDate=new Date();
+
+function calc(){
+  const t=+$('rischio').value, l=+$('ldl').value||0;
+  const d=$('data').value?new Date($('data').value+'T12:00'):new Date();
+  const need=l>t?Math.ceil((l-t)/l*100):0;
+  const fifty=(t===55||t===70||t===40);
+  return{t,l,d,need,fifty,risk:riskName[t],
+    ctrl:addDays(d,+$('sett').value*7),
+    refill:addDays(d,+$('pack').value-7),
+    pack:+$('pack').value,sett:+$('sett').value,
+    paz:esc($('paz').value||'—'),ter:esc($('terapia').value||'—'),note:esc($('note').value),
+    med:esc($('medico').value),stu:esc($('studio').value),con:esc($('contatti').value),n13:$('nota13').checked};
+}
+const head=c=>`<div class="hd"><div><b>${c.med}</b><span>Specialista in Cardiologia</span></div><div style="text-align:right"><span>${c.stu}</span><br><span>${c.con}</span></div></div>`;
+const kpis=c=>`<div class="kpis"><div><small>LDL attuale</small><strong>${c.l||'—'} mg/dL</strong></div><div><small>Obiettivo</small><strong>&lt; ${c.t} mg/dL</strong></div><div class="hot"><small>Riduzione necessaria</small><strong>${c.need?'−'+c.need+'%':'raggiunto'}</strong></div></div>`;
+
+function letter(c){
+  return head(c)+`<p style="text-align:right">${fmt(c.d)}</p>
+<h2>Gentile Collega,</h2>
+<p>ho visitato in data odierna il/la paziente <b>${c.paz}</b>, che presenta un profilo di rischio cardiovascolare <b>${c.risk}</b> secondo le linee guida ESC/EAS.</p>
+${kpis(c)}
+${c.fifty?`<p>Per questa categoria l'obiettivo prevede anche una riduzione dell'LDL di almeno il 50% rispetto al valore basale.</p>`:''}
+<p><b>Terapia ipolipemizzante indicata:</b> ${c.ter}.${c.n13?' Prescrivibile a carico del SSN secondo Nota 13 AIFA.':''}</p>
+<p>Ti chiedo cortesemente di proseguire la terapia con continuità e di richiedere <b>profilo lipidico e ALT</b> a ${c.sett} settimane, entro il <b>${fmt(c.ctrl)}</b>. In caso di intolleranza o mancato raggiungimento dell'obiettivo resto a disposizione per una rivalutazione.</p>
+${c.note?`<p><b>Note:</b> ${c.note}</p>`:''}
+<p class="sign">Cordiali saluti,<br><b>${c.med}</b></p>
+<p class="foot">Copia consegnata al paziente da portare al medico di medicina generale.</p>`;
+}
+function card(c){
+  return head(c)+`<h2>Il suo piano per il colesterolo</h2>
+<p>Paziente: <b>${c.paz}</b> · visita del ${fmt(c.d)}</p>
+${kpis(c)}
+<p><b>La sua terapia:</b> ${c.ter}. La prenda ogni giorno, possibilmente alla stessa ora.</p>
+<p><b>Perché è importante:</b> abbassare il colesterolo LDL riduce il rischio di infarto e ictus. La terapia funziona solo se presa con continuità: non la sospenda senza averne parlato con il suo medico.</p>
+<ul class="todo">
+<li><span>Esame del sangue (profilo lipidico e transaminasi)</span><b>entro il ${fmt(c.ctrl)}</b></li>
+<li><span>Ricetta per la nuova confezione (${c.pack} compresse) dal medico di famiglia</span><b>entro il ${fmt(c.refill)}</b></li>
+<li><span>Porti questa scheda e la lettera al suo medico di famiglia</span><b>alla prossima visita</b></li>
+</ul>
+<p>Avvisi il medico se compaiono dolori o debolezza muscolare insoliti.</p>
+<p class="foot">Per qualsiasi dubbio contatti lo studio: ${c.con}</p>`;
+}
+function plain(c){
+  const h=$('sheet').innerText;return h;
+}
+function render(){
+  const c=calc();
+  $('sheet').innerHTML=tab==='lettera'?letter(c):card(c);
+  $('sheet').classList.add('flash');setTimeout(()=>$('sheet').classList.remove('flash'),150);
+  try{saved.forEach(k=>localStorage.setItem('pc_'+k,$(k).value))}catch(e){}
+}
+const schemes=[['Statina a intensità moderata',30],['Statina ad alta intensità',50],['Statina alta intensità + ezetimibe',65],['+ inibitore PCSK9',85]];
+function ldlCalc(){
+  const ct=+$('ct').value,h=+$('hdl').value,tg=+$('tg').value;
+  const ok=ct>0&&h>0&&tg>0, valid=tg<400;
+  const f=ok&&valid?Math.round(ct-h-tg/5):null, nh=ok?Math.round(ct-h):null;
+  $('res').innerHTML=`<div><small>LDL calcolato</small><strong>${f!=null?f+' mg/dL':'—'}</strong></div><div><small>Non-HDL</small><strong>${nh!=null?nh+' mg/dL':'—'}</strong></div>${ok&&!valid?'<span class="warn">Trigliceridi ≥ 400: Friedewald non affidabile, serve LDL diretto.</span>':''}`;
+  $('use').disabled=f==null;$('use').dataset.v=f??'';
+  const l=+$('ldl').value||0,t=+$('rischio').value;
+  $('exp').innerHTML=l?`<b>LDL attesa partendo da ${l} mg/dL senza terapia (obiettivo &lt; ${t})</b>`+schemes.map(([n,p])=>{const v=Math.round(l*(1-p/100)),hit=v<t;return`<div class="r ${hit?'ok':''}"><span>${n} (−${p}%)</span><b>${v} mg/dL ${hit?'✓':''}</b><div class="bar"><i style="width:${Math.min(100,v/l*100)}%"></i></div></div>`}).join(''):'';
+}
+$('use').addEventListener('click',()=>{const v=$('use').dataset.v;if(v){$('ldl').value=v;ldlCalc();render();say('LDL inserito nella lettera.')}});
+$('f').addEventListener('input',ldlCalc);
+$('pack').addEventListener('change',()=>{$('terapia').value=$('terapia').value.replace(/\d+ compresse/,$('pack').value+' compresse');render()});
+$('f').addEventListener('input',render);
+$('f').addEventListener('submit',e=>e.preventDefault());
+$('chips').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;$('terapia').value=`Rosumibe (rosuvastatina/ezetimibe) ${b.dataset.d} mg, confezione da ${$('pack').value} compresse – 1 compressa al giorno`;render()});
+['lettera','scheda'].forEach(k=>$('t-'+k).addEventListener('click',()=>{tab=k;['lettera','scheda'].forEach(j=>$('t-'+j).setAttribute('aria-selected',j===k));render()}));
+const say=m=>{$('msg').textContent=m;setTimeout(()=>$('msg').textContent='',4000)};
+$('print').addEventListener('click',()=>{try{window.print()}catch(e){}say('Nella finestra di stampa scegli "Salva come PDF" per avere il file.')});
+$('copy').addEventListener('click',async()=>{try{await navigator.clipboard.writeText(plain());say('Testo copiato.')}catch(e){say('Copia non consentita in questa anteprima.')}});
+ldlCalc();
+render();
+}
+</script>
+<script>if('serviceWorker' in navigator){try{navigator.serviceWorker.register('sw.js').catch(()=>{})}catch(e){}}</script>
+</body>
+</html>
