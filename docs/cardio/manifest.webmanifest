@@ -1,0 +1,15 @@
+{
+  "name": "Ponte cardiologo–MMG",
+  "short_name": "Ponte Cardio",
+  "description": "Lettera al medico di famiglia e scheda paziente dopo la visita cardiologica.",
+  "lang": "it",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#ecebe8",
+  "theme_color": "#a8131e",
+  "icons": [
+    {"src": "icon-192.png", "sizes": "192x192", "type": "image/png"},
+    {"src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable"}
+  ]
+}
