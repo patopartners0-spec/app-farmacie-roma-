@@ -47,6 +47,11 @@ select{font-size:15px;font-weight:600}
 .warnbox{display:flex;gap:10px;padding:11px 13px;border-radius:10px;background:#FFF6E5;font-size:13px;color:#6B3A00}
 .btn{display:flex;align-items:center;justify-content:center;height:52px;border-radius:12px;border:0;background:var(--blu);color:#fff;font:inherit;font-size:16px;font-weight:600;width:100%}
 .btn.sec{background:#fff;color:var(--blu);border:1px solid var(--blu)}
+.costs{display:flex;flex-direction:column;gap:8px}
+.crow{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:11px 12px;border-radius:10px;background:var(--fondo);font-size:14px}
+.crow.sel{background:var(--blu2);outline:2px solid var(--blu)}
+.crow b{font-size:18px;white-space:nowrap}
+.crow .na{color:var(--sub);font-size:13px}
 .cost{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .cost div{border-radius:10px;padding:11px 12px;display:flex;flex-direction:column;gap:4px}
 .cost .a{background:var(--blu2)}.cost .b{background:var(--fondo)}
@@ -140,11 +145,8 @@ select{font-size:15px;font-weight:600}
   </label>
   <div class="note">Rosuvastatina/ezetimibe: indicato in pazienti adulti già controllati con rosuvastatina ed ezetimibe assunti separatamente alla stessa dose. Non adatto alla terapia iniziale. 1 compressa al giorno.</div>
   <div class="card">
-    <div class="row"><span style="font-size:13px;font-weight:600;color:var(--sub)">Costo terapia · 30 giorni</span><span id="badge25" class="badge" style="background:var(--ok)">–25%</span></div>
-    <div class="cost">
-      <div class="a"><small id="cLabA" style="color:var(--blu)"></small><b id="cA"></b></div>
-      <div class="b"><small style="color:var(--sub)">Media assoc. fisse 28 cpr</small><b id="cB"></b></div>
-    </div>
+    <div class="row"><span style="font-size:13px;font-weight:600;color:var(--sub)">Costo SSN · 30 giorni</span><span id="badge25" class="badge" style="background:var(--ok)"></span></div>
+    <div class="costs" id="costs"></div>
     <div class="note" id="cNote"></div>
   </div>
   <div class="card">
@@ -203,14 +205,13 @@ select{font-size:15px;font-weight:600}
 </main>
 
 <script>
-// ===== Prezzi: inserire i prezzi al pubblico ufficiali (lista di trasparenza AIFA) =====
-// Chiave = dosaggio rosuvastatina. Valori in euro per confezione. null = da inserire.
-const PREZZI = {
-  rosumibe60: {5:null, 10:null, 20:null, 40:null},
-  rosumibe30: {5:null, 10:null, 20:null, 40:null},
-  mediaFisse28: {5:null, 10:null, 20:null, 40:null}
+// ===== Costo SSN a compressa (fonte: Lista di trasparenza AIFA al 15/10/2026, Det. AIFA 1463/2026) =====
+const COSTO_30GG = {   // costo SSN per 30 giorni di terapia
+  p60: {5:6.96, 10:8.56, 20:8.56, 40:12.00},   // Rosumibe 60 cpr
+  p30: {5:8.70, 10:10.70, 20:10.70, 40:15.00}, // 30 cpr, prezzo di riferimento
+  p28: {5:9.47, 10:11.37, 20:11.37, 40:null}   // 28 cpr, prezzo di riferimento (40/10 non disponibile)
 };
-const FONTE_PREZZI = 'Lista di trasparenza AIFA, aggiornata al [data]';
+const FONTE_PREZZI = 'Lista di trasparenza AIFA al 15/10/2026';
 
 const $ = (id) => document.getElementById(id);
 const S = { male: true, smk: false, on: {} };
@@ -292,20 +293,17 @@ function calc(){
 function terapia(){
   const [dose, pack] = $('farmaco').value.split('|').map(Number);
   const is60 = pack === 60;
-  const prezzoConf = (is60 ? PREZZI.rosumibe60 : PREZZI.rosumibe30)[dose];
-  const mese = prezzoConf == null ? null : prezzoConf * 30 / pack;
-  const fisse = PREZZI.mediaFisse28[dose];
-  const fisseMese = fisse == null ? null : fisse * 30 / 28;
-  $('badge25').style.display = is60 ? '' : 'none';
-  if (mese != null && fisseMese != null){
-    const d = Math.round((1 - mese/fisseMese)*100);
-    $('badge25').textContent = (d>0?'–':'+') + Math.abs(d) + '%';
-    $('badge25').style.display = d>0 ? '' : 'none';
-  }
-  $('cLabA').textContent = 'Rosumibe ' + pack + ' cpr';
-  $('cA').textContent = euro(mese);
-  $('cB').textContent = euro(fisseMese);
-  $('cNote').textContent = (is60 ? '1 confezione = 60 giorni, costo riportato a 30' : '1 confezione = 30 giorni') + ' · stesso dosaggio · Fonte: ' + FONTE_PREZZI;
+  const c60 = COSTO_30GG.p60[dose], c30 = COSTO_30GG.p30[dose], c28 = COSTO_30GG.p28[dose];
+  const righe = [
+    {k:60, t:'Rosumibe 60 cpr', v:c60},
+    {k:30, t:'Confezione 30 cpr (prezzo di riferimento)', v:c30},
+    {k:28, t:'Confezione 28 cpr (prezzo di riferimento)', v:c28}
+  ];
+  $('costs').innerHTML = righe.map(r => '<div class="crow' + (r.k === pack ? ' sel' : '') + '"><span>' + r.t + '</span>' + (r.v == null ? '<span class="na">non disponibile</span>' : '<b>' + euro(r.v) + '</b>') + '</div>').join('');
+  const conf = c28 != null ? c28 : c30;
+  const risp = Math.round((1 - c60/conf)*100);
+  $('badge25').textContent = '60 cpr: –' + risp + '% vs ' + (c28 != null ? '28' : '30') + ' cpr';
+  $('cNote').textContent = 'Dosaggio ' + dose + ' mg/10 mg · costo per il SSN a parità di principi attivi · Fonte: ' + FONTE_PREZZI + '; Det. AIFA 1463/2026';
   const oggi = new Date();
   const ric = addDays(oggi, pack - 5);
   $('dStart').textContent = ' · oggi, ' + fmtD(oggi);
