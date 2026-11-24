@@ -296,13 +296,13 @@ function terapia(){
   const c60 = COSTO_30GG.p60[dose], c30 = COSTO_30GG.p30[dose], c28 = COSTO_30GG.p28[dose];
   const righe = [
     {k:60, t:'Rosumibe 60 cpr', v:c60},
-    {k:30, t:'Confezione 30 cpr (prezzo di riferimento)', v:c30},
     {k:28, t:'Confezione 28 cpr (prezzo di riferimento)', v:c28}
   ];
   $('costs').innerHTML = righe.map(r => '<div class="crow' + (r.k === pack ? ' sel' : '') + '"><span>' + r.t + '</span>' + (r.v == null ? '<span class="na">non disponibile</span>' : '<b>' + euro(r.v) + '</b>') + '</div>').join('');
-  const conf = c28 != null ? c28 : c30;
-  const risp = Math.round((1 - c60/conf)*100);
-  $('badge25').textContent = '60 cpr: –' + risp + '% vs ' + (c28 != null ? '28' : '30') + ' cpr';
+  if (c28 != null){
+    $('badge25').textContent = '60 cpr: –' + Math.round((1 - c60/c28)*100) + '% vs 28 cpr';
+    $('badge25').style.display = '';
+  } else $('badge25').style.display = 'none';
   $('cNote').textContent = 'Dosaggio ' + dose + ' mg/10 mg · costo per il SSN a parità di principi attivi · Fonte: ' + FONTE_PREZZI + '; Det. AIFA 1463/2026';
   const oggi = new Date();
   const ric = addDays(oggi, pack - 5);
